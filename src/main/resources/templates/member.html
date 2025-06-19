@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <title>Contoh Index Baru</title>
+</head>
+<body>
+    <div class="container mx-auto p-5 border-2 border-gray-300 rounded-2xl mt-10">
+        <h2 class="text-2xl font-bold mt-10 text-center">List Member</h2>
+        <ul>
+            <li th:each="member : ${members}">
+                <a th:href="@{/members/{id}(id=${member.id})}">
+                    <span th:text="${member.name}"></span>
+                    <br>
+                    <span th:text="${member.email}"></span>
+                </a>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>
