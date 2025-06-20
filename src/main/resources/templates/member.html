@@ -1,16 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <title>Contoh Index Baru</title>
-</head>
+<html xmlns:th="http://www.thymeleaf.org"
+      th:replace="~{layout/base :: layout(~{::body}, 'List Member')}">
 <body>
-    <div class="container mx-auto p-5 border-2 border-gray-300 rounded-2xl mt-10">
-        <h2 class="text-2xl font-bold mt-10 text-center">List Member</h2>
-        <ul>
-            <li th:each="member : ${members}">
+<div th:fragment="body">
+    <div th:replace="~{section/title :: section-title('List Member', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.')}"></div>
+
+    <!-- content about us -->
+    <div class="container mx-auto flex flex-col gap-4">
+        <ul class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+            <li th:each="member : ${members}" class="bg-white rounded-lg shadow-md p-5">
                 <a th:href="@{/members/{id}(id=${member.id})}">
                     <span th:text="${member.name}"></span>
                     <br>
@@ -19,5 +17,6 @@
             </li>
         </ul>
     </div>
+</div>
 </body>
 </html>
