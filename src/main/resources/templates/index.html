@@ -1,30 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <title>Contoh Index Baru</title>
-</head>
-<body>
-    <div class="container mx-auto p-5 border-2 border-gray-300 rounded-2xl mt-10">
-        <h1 class="text-2xl font-bold mt-10 text-center">Contoh Index Baru</h1>
-        <p>Ini adalah contoh halaman index baru.</p>
-        <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.
-        </p>
-        
-        <h2 class="text-xl font-bold mt-10">List Buku yang bisa dibaca :</h2>
-        <ul>
-            <li th:each="book : ${books}">
-                <a th:href="@{/books/{id}(id=${book.id})}">
-                    Judul : <span th:text="${book.title}"></span>
-                    <br>Author : <span th:text="${book.author}"></span>
-                    <br>Genre : <span th:text="${book.genre}"></span>
-                    <br>Price : <span th:text="${book.price}"></span>
-                </a>
-            </li>
-        </ul>
+<html xmlns:th="http://www.thymeleaf.org"
+      th:replace="layout/base :: layout(~{::body}, 'Home Page')">
+    <div th:fragment="body">
+        <div th:replace="homepage/hero :: frontpage-hero"></div>
+        <div th:replace="homepage/product :: frontpage-product"></div>
     </div>
-</body>
 </html>

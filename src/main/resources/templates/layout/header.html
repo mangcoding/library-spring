@@ -1,0 +1,22 @@
+<header th:fragment="header">
+    <div class="container flex justify-between items-center mx-auto py-2">
+        <div class="logo flex items-center gap-2">
+            <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0 20C0 31.0457 8.95431 40 20 40C31.0457 40 40 31.0457 40 20C40 8.95431 31.0457 0 20 0C8.95431 0 0 8.95431 0 20Z" fill="#005C53"/>
+                <path d="M11.3887 11.3889V29.256V11.3889Z" fill="white"/>
+                <path d="M11.3887 11.3889V29.256" stroke="white" stroke-width="2.89267"/>
+                <path d="M16.7344 11.3889V20.2887V11.3889Z" fill="white"/>
+                <path d="M16.7344 11.3889V20.2887" stroke="white" stroke-width="2.88718"/>
+                <path d="M20.8042 11.3898V14.4127H25.9033L29.6022 22.0706H32.9327L27.6431 11.3898H20.8042Z" fill="white"/>
+                <path d="M22.3223 17.6888V29.6111V17.6888Z" fill="white"/>
+                <path d="M22.3223 17.6888V29.6111" stroke="white" stroke-width="3.34168"/>
+            </svg> 
+            MangcodingStore               
+        </div>
+        <div class="nav-links flex gap-4 items-center">
+            <a th:href="@{/}">Home</a>
+            <a th:href="@{/about}">About</a>
+            <a th:href="@{/contact}">Contact</a>
+        </div>
+    </div>
+</header>

@@ -1,0 +1,8 @@
+<div th:fragment="section-title(title, description)" class="bg-white py-5 md:py-10 lg:py-16 bg-[#F0F4F4]">
+    <div class="container mx-auto">
+        <div class="flex flex-col gap-4">
+            <h2 class="text-[52px] text-center text-[#005C53] font-bold tracking-[0.7px] leading-none" th:text="${title}"></h2>
+            <p class="text-[#393939] text-center text-[14px]" th:text="${description}"></p>
+        </div>
+    </div>
+</div>
